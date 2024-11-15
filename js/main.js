@@ -28,7 +28,7 @@ $("#worker-save").on("click", function () {
     $("#worker-memoarea").append(html);
 });
 
-// clearクリック時のイベント
+// BOSSのclearクリック時のイベント
 $("#boss-clear").on("click", function () {
     let bossNum = $("#boss-num");
     bossNum.val("");
@@ -36,7 +36,7 @@ $("#boss-clear").on("click", function () {
     bossMemo.val("");
 });
 
-// clearクリック時のイベント
+// Workerのclearクリック時のイベント
 $("#worker-clear").on("click", function () {
     let workerNum = $("#worker-num");
     workerNum.val("");
@@ -55,6 +55,19 @@ for (let i = 0; i < localStorage.length; i++) {
       </tr>
       `;
     $("#boss-memoarea").append(html);
+};
+
+// Worker側のページを読み込み、保存したデータ取得して表示する挙動
+for (let i = 0; i < localStorage.length; i++) {
+    const workerKey = localStorage.workerKey(i);
+    const workerValue = localStorage.getItem(workerKey);
+    const html = `
+      <tr>
+        <td>${workerKey}</td>
+        <td>${workerValue}</td>
+      </tr>
+      `;
+    $("#worker-memoarea").append(html);
 };
 
 // deleteクリック時のイベント ※課題提出後に改良。
