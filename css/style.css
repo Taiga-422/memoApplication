@@ -119,9 +119,11 @@ section{
 
 #boss-delete {
     margin-left: 20px;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 10px;
     width: 180px;
+    color: white;
+    background-color: #605c5c;
 }
 
 #boss-delete:hover {
@@ -138,6 +140,7 @@ section{
 
 #worker-section {
     align-items: center;
+    place-items: center;
 }
 
 #worker label {
@@ -215,9 +218,11 @@ section{
 
 #worker-delete {
     margin-left: 20px;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 10px;
     width: 180px;
+    color: white;
+    background-color: #605c5c;
 }
 
 #worker-delete:hover {
