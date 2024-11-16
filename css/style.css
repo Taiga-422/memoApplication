@@ -56,10 +56,10 @@ section{
 }
 
 #boss-memoarea {
-    background-color: chartreuse;
+    background-color: rgb(168, 234, 102);
     border-radius: 10px;
-    width: 600px;
-    height: 500px;
+    width: 800px;
+    height: 700px;
 }
 
 #boss-save {
@@ -127,10 +127,10 @@ section{
 }
 
 #worker-memoarea {
-    background-color: chartreuse;
+    background-color: rgb(239, 237, 154);
     border-radius: 10px;
-    width: 600px;
-    height: 500px;
+    width: 800px;
+    height: 700px;
 }
 
 #worker-save {
