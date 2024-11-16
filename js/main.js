@@ -65,10 +65,10 @@ for (let i = 0; i < localStorage.length; i++) {
     if (key.startsWith("WORKER_")) { //WORKER_から始まるキーのみ表示
         const workerValue = localStorage.getItem(key);
         const html = `
-      <tr>
-        <td>${key}</td>
-        <td>${workerValue}</td>
-      </tr>
+      <ul>
+        <li>${key}</li>
+        <li>${workerValue}</li>
+      </ul>
       `;
         $("#worker-memoarea").append(html);
     }
