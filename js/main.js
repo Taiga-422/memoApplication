@@ -74,7 +74,7 @@ for (let i = 0; i < localStorage.length; i++) {
     }
 };
 
-// BOSSのdeleteクリック時のイベント ※課題提出後に改良。
+// BOSSのdeleteクリック時のイベント 
 $("#boss-delete").on("click", function () {
     // localstorageをループしてBOSSのキーだけ削除する。
     for (let i = 0; i < localStorage.length; i++) {
@@ -87,15 +87,16 @@ $("#boss-delete").on("click", function () {
     $("#boss-memoarea").empty();
 });
 
-// WORKERのdeleteクリック時のイベント ※課題提出後に改良。
+// WORKERのdeleteクリック時のイベント
 $("#worker-delete").on("click", function () {
-    // localstorageをループしてBOSSのキーだけ削除する。
+    // localstorageをループしてWORKERのキーだけ削除する。
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
-        if (key.startsWith("WORKER_")) { //"BOSS_"で始まるキーを削除する。
+        if (key.startsWith("WORKER_")) { //"WORKER_"で始まるキーを削除する。
             localStorage.removeItem(key);
         }
     }
-    // BOSSのメモエリアを空にする。
+    // WORKERのメモエリアを空にする。
     $("#worker-memoarea").empty();
 });
+
