@@ -138,7 +138,8 @@ section{
 #worker-memo {
     font-size: 20px;
     height: 80px;
-    width: 150px;
+    width: 250px;
+    margin-top: 20px;
     margin-left: 40px;
     margin-right: 20px;
     background-color: lavender;
@@ -198,7 +199,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 5%;
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(249, 248, 248);
     font-weight: bold;
     background-color: rgb(11, 68, 36);
@@ -210,9 +211,10 @@ ul {
     list-style: none;
     width: 100%;
     border-radius: 10px;
+    font-size: 30px;
     color: black;
     text-shadow: none;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
 }
 
