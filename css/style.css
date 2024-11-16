@@ -33,6 +33,10 @@ section{
     text-align: center;
 }
 
+#boss-section {
+    align-items: center;
+}
+
 #boss {
     height: 100%;
     align-items: center;
@@ -120,12 +124,20 @@ section{
     width: 180px;
 }
 
+#boss-delete:hover {
+    text-shadow: 2px 2px #353535;
+    box-shadow: 5px 5px #353535;
+}
 
 #worker {
     height: 100%;
     align-items: center;
     place-items: center;
     font-weight: bold;
+}
+
+#worker-section {
+    align-items: center;
 }
 
 #worker label {
@@ -206,6 +218,11 @@ section{
     font-size: 15px;
     border-radius: 10px;
     width: 180px;
+}
+
+#worker-delete:hover {
+    text-shadow: 2px 2px #353535;
+    box-shadow: 5px 5px #353535;
 }
 
 footer {
