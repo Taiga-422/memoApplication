@@ -1,6 +1,6 @@
 // BOSSのsaveボタンクリック時のイベント
 $("#boss-save").on("click", function () {
-    const bossKey = $("#boss-num").val();
+    const bossKey = "BOSS_" + $("#boss-num").val();
     const bossValue = $("#boss-memo").val();
 
     localStorage.setItem(bossKey, bossValue);
@@ -15,7 +15,7 @@ $("#boss-save").on("click", function () {
 
 // WORKERのsaveボタンクリック時のイベント
 $("#worker-save").on("click", function () {
-    const workerKey = $("#worker-num").val();
+    const workerKey = "WORKER_" + $("#worker-num").val();
     const workerValue = $("#worker-memo").val();
 
     localStorage.setItem(workerKey, workerValue);
@@ -46,34 +46,56 @@ $("#worker-clear").on("click", function () {
 
 // BOSS側のページを読み込み、保存したデータ取得して表示する挙動
 for (let i = 0; i < localStorage.length; i++) {
-    const bossKey = localStorage.bossKey(i);
-    const bossValue = localStorage.getItem(bossKey);
-    const html = `
-      <tr>
-        <td>${bossKey}</td>
-        <td>${bossValue}</td>
-      </tr>
+    const key = localStorage.key(i);
+    if (key.startsWith("BOSS_")) { //BOSS_から始まるキーのみ表示
+        const bossValue = localStorage.getItem(key);
+        const html = `
+      <ul>
+        <li>${key}</li>
+        <li>${bossValue}</li>
+      </ul>
       `;
-    $("#boss-memoarea").append(html);
+        $("#boss-memoarea").append(html);
+    }
 };
 
 // Worker側のページを読み込み、保存したデータ取得して表示する挙動
 for (let i = 0; i < localStorage.length; i++) {
-    const workerKey = localStorage.workerKey(i);
-    const workerValue = localStorage.getItem(workerKey);
-    const html = `
+    const key = localStorage.key(i);
+    if (key.startsWith("WORKER_")) { //WORKER_から始まるキーのみ表示
+        const workerValue = localStorage.getItem(key);
+        const html = `
       <tr>
-        <td>${workerKey}</td>
+        <td>${key}</td>
         <td>${workerValue}</td>
       </tr>
       `;
-    $("#worker-memoarea").append(html);
+        $("#worker-memoarea").append(html);
+    }
 };
 
-// deleteクリック時のイベント ※課題提出後に改良。
+// BOSSのdeleteクリック時のイベント ※課題提出後に改良。
 $("#boss-delete").on("click", function () {
-    localStorage.clear();
+    // localstorageをループしてBOSSのキーだけ削除する。
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith("BOSS_")) { //"BOSS_"で始まるキーを削除する。
+            localStorage.removeItem(key);
+        }
+    }
+    // BOSSのメモエリアを空にする。
     $("#boss-memoarea").empty();
 });
 
-
+// WORKERのdeleteクリック時のイベント ※課題提出後に改良。
+$("#worker-delete").on("click", function () {
+    // localstorageをループしてBOSSのキーだけ削除する。
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith("WORKER_")) { //"BOSS_"で始まるキーを削除する。
+            localStorage.removeItem(key);
+        }
+    }
+    // BOSSのメモエリアを空にする。
+    $("#worker-memoarea").empty();
+});
